@@ -1,13 +1,185 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* src/index.css */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* Base styling for the body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Styling for anchor tags to remove default styling */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Global styling for Material-UI Paper component */
+  .MuiPaper-root {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Global styling for Material-UI ButtonBase component */
+  .MuiButtonBase-root:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+  
+  /* Sidebar specific styling */
+  .sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .sidebar .list-item {
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .sidebar .list-item:hover {
+    background-color: #e0e0e0;
+    color: #3f51b5;
+  }
+  
+  .sidebar .toggle-button {
+    margin-top: auto;
+    background-color: #3f51b5;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .sidebar .toggle-button:hover {
+    background-color: #303f9f;
+    color: #ffffff;
+  }
+  
+  /* Dashboard specific styling */
+  .dashboard {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .dashboard .paper {
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  
+  .dashboard .paper:hover {
+    transform: scale(1.05);
+  }
+  
+  .dashboard .title {
+    font-weight: 600;
+    color: #3f51b5;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  /* Calendar specific styling */
+  .calendar {
+    margin: 20px auto;
+    max-width: 95%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Kanban board specific styling */
+  .kanban-board {
+    margin: 20px auto;
+    max-width: 95%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Table specific styling */
+  .table-container {
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .table-container .table {
+    min-width: 650px;
+  }
+  
+  .table-container .table-head {
+    background-color: #3f51b5;
+    color: #ffffff;
+  }
+  
+  .table-container .table-row:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Chart specific styling */
+  .chart-container {
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .sidebar {
+      width: 200px;
+    }
+  
+    .dashboard .paper, .calendar, .kanban-board, .chart-container {
+      margin: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 180px;
+    }
+  
+    .dashboard, .table-container, .chart-container {
+      padding: 10px;
+    }
+  
+    .table-container .table {
+      min-width: auto;
+    }
+  
+    .dashboard .title {
+      font-size: 1.5rem;
+    }
+  
+    .dashboard .paper {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 160px;
+    }
+  
+    .dashboard, .table-container, .chart-container {
+      padding: 5px;
+    }
+  
+    .dashboard .title {
+      font-size: 1.2rem;
+    }
+  
+    .dashboard .paper {
+      padding: 10px;
+      margin: 10px 0;
+    }
+  }
+  
